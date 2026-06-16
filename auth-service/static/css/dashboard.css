@@ -1,0 +1,92 @@
+.dashboard{
+    max-width:1200px;
+    margin:auto;
+    padding:80px 20px;
+}
+
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:30px 20px;
+}
+
+.logo{
+    font-size:2rem;
+    font-weight:700;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    align-items:center;
+}
+
+.nav-links a{
+    color:#111;
+}
+
+
+.welcome{
+    margin-bottom:60px;
+}
+
+.badge{
+    display:inline-block;
+
+    background:#f3f3f3;
+
+    padding:10px 16px;
+
+    border-radius:100px;
+
+    margin-bottom:20px;
+
+    text-transform:capitalize;
+}
+
+.welcome h1{
+    font-size:4rem;
+    margin-bottom:15px;
+}
+
+.welcome p{
+    color:#777;
+}
+
+.dashboard-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+}
+
+.dashboard-card{
+    border:1px solid #eee;
+
+    border-radius:20px;
+
+    padding:35px;
+}
+
+.dashboard-card h3{
+    color:#666;
+    margin-bottom:20px;
+}
+
+.dashboard-card h2{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.dashboard-card p{
+    color:#777;
+    line-height:1.6;
+}

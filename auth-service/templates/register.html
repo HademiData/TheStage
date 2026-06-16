@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/css/register.css">
+</head>
+<body>
+
+<div class="card">
+
+    <h1>Your Stage</h1>
+
+    <form method="POST" action="/register">
+
+        <input
+            type="email"
+            name="email"
+            placeholder="Email"
+        >
+
+        <input
+            type="password"
+            name="password"
+            placeholder="Password"
+        >
+
+        <select name="role">
+            <option value="speaker">Speaker</option>
+            <option value="event">Event</option>
+        </select>
+
+        <button>Create Account</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
