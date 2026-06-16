@@ -35,7 +35,6 @@ func (a *AuthService) Login(email, password string) error {
 	if err != nil {
 		return err
 	}
-
 	if user.Password != password {
 		return errors.New("invalid credentials")
 	}
