@@ -1,0 +1,32 @@
+body{
+    margin:0;
+    font-family:Inter,sans-serif;
+    background:#fff;
+}
+
+.card{
+    width:400px;
+    margin:100px auto;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+input,
+select{
+    padding:12px;
+}
+
+button{
+    padding:12px;
+    border:none;
+    cursor:pointer;
+    background:#111;
+    color:white;
+}

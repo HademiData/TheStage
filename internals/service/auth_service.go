@@ -1,8 +1,8 @@
 package service
 
 import (
-	"auth-service/internals/domain"
-	"auth-service/internals/repository"
+	"stage/internals/domain"
+	"stage/internals/repository"
 	"errors"
 )
 

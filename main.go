@@ -1,9 +1,9 @@
 package main
 
 import (
-    "auth-service/internals/handlers" // Ensure this matches your actual package name
-    "auth-service/internals/repository"
-    "auth-service/internals/service"
+    "stage/internals/handlers" // Ensure this matches your actual package name
+    "stage/internals/repository"
+    "stage/internals/service"
     "log"
     "net/http"
 

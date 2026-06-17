@@ -1,6 +1,6 @@
 package repository
 
-import "auth-service/internals/domain"
+import "stage/internals/domain"
 
 type UserRepository interface {
 	Create(user domain.User) error

@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"auth-service/internals/service"
+	"stage/internals/service"
 	"html/template"
 	"net/http"
 )

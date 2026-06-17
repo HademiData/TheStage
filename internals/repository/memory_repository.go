@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"auth-service/internals/domain"
+	"stage/internals/domain"
 	"errors"
 )
 
