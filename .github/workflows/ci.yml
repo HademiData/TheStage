@@ -23,7 +23,6 @@ jobs:
           
       - name: install-dependencies
 
-        run: cd /auth-service
         run:  go mod tidy
 
       - name: Run-tests
