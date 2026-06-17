@@ -1,40 +1,40 @@
 package main
 
 import (
-    "stage/internals/handlers" // Ensure this matches your actual package name
-    "stage/internals/repository"
-    "stage/internals/service"
-    "log"
-    "net/http"
+	"log"
+	"net/http"
+	handler "stage/internals/handlers" // Ensure this matches your actual package name
+	"stage/internals/repository"
+	"stage/internals/service"
 
-    "github.com/gorilla/mux" // You must import the package
+	"github.com/gorilla/mux" // You must import the package
 )
 
 func main() {
-    repo := repository.NewMemoryRepository()
-    authService := service.NewAuthService(repo)
-    authHandler := handler.NewAuthHandler(authService)
+	repo := repository.NewMemoryRepository()
+	authService := service.NewAuthService(repo)
+	authHandler := handler.NewAuthHandler(authService)
 
-    // Initialize the gorilla/mux router
-    r := mux.NewRouter()
+	// Initialize the gorilla/mux router
+	r := mux.NewRouter()
 
-    // Static file serving
-    fs := http.FileServer(http.Dir("./static"))
-    r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", fs))
+	fs := http.FileServer(http.Dir("./static"))
 
-    // Routes
+	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", fs))
 
-    r.HandleFunc("/", authHandler.HomePage).Methods(http.MethodGet)
+	// Routes
 
-    r.HandleFunc("/register", authHandler.RegisterPage).Methods(http.MethodGet)
-    r.HandleFunc("/login", authHandler.LoginPage).Methods(http.MethodGet)
+	r.HandleFunc("/", authHandler.HomePage).Methods(http.MethodGet)
 
-    r.HandleFunc("/register", authHandler.Register).Methods(http.MethodPost)
-    r.HandleFunc("/login", authHandler.Login).Methods(http.MethodPost)
+	r.HandleFunc("/register", authHandler.RegisterPage).Methods(http.MethodGet)
+	r.HandleFunc("/login", authHandler.LoginPage).Methods(http.MethodGet)
 
-    r.HandleFunc("/dashboard", authHandler.DashboardPage).Methods(http.MethodGet)
+	r.HandleFunc("/register", authHandler.Register).Methods(http.MethodPost)
+	r.HandleFunc("/login", authHandler.Login).Methods(http.MethodPost)
 
-    log.Println("running on :8080")
+	r.HandleFunc("/dashboard", authHandler.DashboardPage).Methods(http.MethodGet)
 
-    http.ListenAndServe(":8080", r)
+	log.Println("running on :8080")
+
+	http.ListenAndServe(":8080", r)
 }
